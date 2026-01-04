@@ -27,6 +27,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
   }
   
   .submit-button:hover {
@@ -35,4 +36,21 @@
   
   .submit-button:active {
     transform: scale(0.98);
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 480px) {
+    .gratitude-form {
+      gap: 8px;
+    }
+  
+    .gratitude-input {
+      padding: 10px 14px;
+      font-size: 0.95rem;
+    }
+  
+    .submit-button {
+      padding: 10px 20px;
+      font-size: 0.95rem;
+    }
   }
