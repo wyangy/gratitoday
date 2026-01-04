@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import GratitudeForm from "./GratitudeForm";
 import GratitudeList from "./GratitudeList";
 
 function App() {
-  const [entries, setEntries] = useState([]);
+  // Load entries from localStorage on start
+  const [entries, setEntries] = useState(() => {
+    const saved = localStorage.getItem("gratitudeEntries");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // Save entries to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("gratitudeEntries", JSON.stringify(entries));
+  }, [entries]);
 
   const addEntry = (text) => {
     const newEntry = {
