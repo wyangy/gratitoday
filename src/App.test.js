@@ -88,4 +88,83 @@ describe("Gratitoday App", () => {
     expect(screen.getByText(/First entry/i)).toBeInTheDocument();
     expect(screen.getByText(/Second entry/i)).toBeInTheDocument();
   });
+
+  test("edits an entry when edit button is clicked", () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText(/I'm grateful for.../i);
+    const addButton = screen.getByRole("button", { name: /Add/i });
+
+    // Add an entry
+    fireEvent.change(input, { target: { value: "Original text" } });
+    fireEvent.click(addButton);
+
+    expect(screen.getByText(/Original text/i)).toBeInTheDocument();
+
+    // Click edit button (pencil icon)
+    const editButton = screen.getByText(/✎/);
+    fireEvent.click(editButton);
+
+    // Find the edit input and change the text
+    const editInput = screen.getByDisplayValue(/Original text/i);
+    fireEvent.change(editInput, { target: { value: "Edited text" } });
+
+    // Click save
+    const saveButton = screen.getByText(/Save/i);
+    fireEvent.click(saveButton);
+
+    // Check new text appears and old text is gone
+    expect(screen.getByText(/Edited text/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Original text/i)).not.toBeInTheDocument();
+  });
+
+  test("cancels edit and reverts to original text", () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText(/I'm grateful for.../i);
+    const addButton = screen.getByRole("button", { name: /Add/i });
+
+    // Add an entry
+    fireEvent.change(input, { target: { value: "Original text" } });
+    fireEvent.click(addButton);
+
+    // Click edit
+    const editButton = screen.getByText(/✎/);
+    fireEvent.click(editButton);
+
+    // Change text
+    const editInput = screen.getByDisplayValue(/Original text/i);
+    fireEvent.change(editInput, { target: { value: "Changed text" } });
+
+    // Click cancel
+    const cancelButton = screen.getByText(/Cancel/i);
+    fireEvent.click(cancelButton);
+
+    // Original text should still be there
+    expect(screen.getByText(/Original text/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Changed text/i)).not.toBeInTheDocument();
+  });
+
+  test("does not save empty edit", () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText(/I'm grateful for.../i);
+    const addButton = screen.getByRole("button", { name: /Add/i });
+
+    // Add an entry
+    fireEvent.change(input, { target: { value: "Original text" } });
+    fireEvent.click(addButton);
+
+    // Click edit
+    const editButton = screen.getByText(/✎/);
+    fireEvent.click(editButton);
+
+    // Clear the input
+    const editInput = screen.getByDisplayValue(/Original text/i);
+    fireEvent.change(editInput, { target: { value: "" } });
+
+    // Click save
+    const saveButton = screen.getByText(/Save/i);
+    fireEvent.click(saveButton);
+
+    // Should still be in edit mode (save didn't work)
+    expect(screen.getByText(/Save/i)).toBeInTheDocument();
+  });
 });
