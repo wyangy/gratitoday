@@ -15,6 +15,11 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
   
+  .gratitude-item.editing {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
   .item-content {
     flex: 1;
   }
@@ -28,6 +33,30 @@
   .item-date {
     font-size: 0.85rem;
     color: #999;
+  }
+  
+  .item-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .edit-button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  
+  .edit-button:hover {
+    background: #357abd;
   }
   
   .delete-button {
@@ -48,4 +77,48 @@
   
   .delete-button:hover {
     background: #cc0000;
+  }
+  
+  .edit-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  
+  .edit-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  
+  .save-button,
+  .cancel-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  
+  .save-button {
+    background: #4a90e2;
+    color: white;
+  }
+  
+  .save-button:hover {
+    background: #357abd;
+  }
+  
+  .cancel-button {
+    background: #ddd;
+    color: #333;
+  }
+  
+  .cancel-button:hover {
+    background: #ccc;
   }

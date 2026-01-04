@@ -2,7 +2,7 @@ import React from "react";
 import GratitudeItem from "./GratitudeItem";
 import "./GratitudeList.css";
 
-function GratitudeList({ entries, onDelete }) {
+function GratitudeList({ entries, onDelete, onEdit }) {
   if (entries.length === 0) {
     return (
       <div className="empty-state">
@@ -14,7 +14,12 @@ function GratitudeList({ entries, onDelete }) {
   return (
     <div className="gratitude-list">
       {entries.map((entry) => (
-        <GratitudeItem key={entry.id} entry={entry} onDelete={onDelete} />
+        <GratitudeItem
+          key={entry.id}
+          entry={entry}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
       ))}
     </div>
   );

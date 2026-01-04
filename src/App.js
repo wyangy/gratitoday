@@ -4,13 +4,11 @@ import GratitudeForm from "./GratitudeForm";
 import GratitudeList from "./GratitudeList";
 
 function App() {
-  // Load entries from localStorage on start
   const [entries, setEntries] = useState(() => {
     const saved = localStorage.getItem("gratitudeEntries");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save entries to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("gratitudeEntries", JSON.stringify(entries));
   }, [entries]);
@@ -28,6 +26,14 @@ function App() {
     setEntries(entries.filter((entry) => entry.id !== id));
   };
 
+  const editEntry = (id, newText) => {
+    setEntries(
+      entries.map((entry) =>
+        entry.id === id ? { ...entry, text: newText } : entry
+      )
+    );
+  };
+
   return (
     <div className="App">
       <header>
@@ -36,7 +42,11 @@ function App() {
       </header>
 
       <GratitudeForm onAddEntry={addEntry} />
-      <GratitudeList entries={entries} onDelete={deleteEntry} />
+      <GratitudeList
+        entries={entries}
+        onDelete={deleteEntry}
+        onEdit={editEntry}
+      />
     </div>
   );
 }
