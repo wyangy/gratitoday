@@ -7,14 +7,14 @@ function GratitudeItem({ entry, onDelete, onEdit }) {
 
   const handleSave = () => {
     if (editText.trim() === "") {
-      return; // Don't save empty
+      return;
     }
     onEdit(entry.id, editText);
     setIsEditing(false);
   };
 
   const handleCancel = () => {
-    setEditText(entry.text); // Reset to original
+    setEditText(entry.text);
     setIsEditing(false);
   };
 
@@ -51,7 +51,7 @@ function GratitudeItem({ entry, onDelete, onEdit }) {
           ✎
         </button>
         <button className="delete-button" onClick={() => onDelete(entry.id)}>
-          ×
+          ⌫
         </button>
       </div>
     </div>
