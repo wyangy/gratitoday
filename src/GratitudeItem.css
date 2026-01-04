@@ -1,0 +1,51 @@
+.gratitude-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .gratitude-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .item-content {
+    flex: 1;
+  }
+  
+  .item-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .item-date {
+    font-size: 0.85rem;
+    color: #999;
+  }
+  
+  .delete-button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    line-height: 1;
+  }
+  
+  .delete-button:hover {
+    background: #cc0000;
+  }

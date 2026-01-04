@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import GratitudeForm from "./GratitudeForm";
+import GratitudeList from "./GratitudeList";
 
 function App() {
   const [entries, setEntries] = useState([]);
@@ -11,7 +12,11 @@ function App() {
       text: text,
       date: new Date().toLocaleDateString(),
     };
-    setEntries([newEntry, ...entries]); // Add to beginning of array
+    setEntries([newEntry, ...entries]);
+  };
+
+  const deleteEntry = (id) => {
+    setEntries(entries.filter((entry) => entry.id !== id));
   };
 
   return (
@@ -22,17 +27,7 @@ function App() {
       </header>
 
       <GratitudeForm onAddEntry={addEntry} />
-
-      {/* We'll display entries here next */}
-      <div>
-        {entries.map((entry) => (
-          <div key={entry.id}>
-            <p>
-              {entry.text} - {entry.date}
-            </p>
-          </div>
-        ))}
-      </div>
+      <GratitudeList entries={entries} onDelete={deleteEntry} />
     </div>
   );
 }

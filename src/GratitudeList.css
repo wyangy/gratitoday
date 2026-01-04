@@ -1,0 +1,10 @@
+.gratitude-list {
+    margin-top: 20px;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-style: italic;
+  }
