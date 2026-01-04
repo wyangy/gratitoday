@@ -21,7 +21,8 @@
   .submit-button {
     padding: 12px 24px;
     font-size: 1rem;
-    background: #4a90e2;
+    font-weight:600;
+    background: #2ECC71;
     color: white;
     border: none;
     border-radius: 8px;
@@ -31,7 +32,8 @@
   }
   
   .submit-button:hover {
-    background: #357abd;
+    background: #27AE60
+    ;
   }
   
   .submit-button:active {
