@@ -1,0 +1,34 @@
+.background {
+    position: fixed;
+    top: 0;             /* start from top of viewport */
+    left: 0;
+    width: 100%;
+    height: 100vh;      /* full viewport height */
+    z-index: -10;
+    pointer-events: none;
+  
+    /* Sky gradient covering whole screen */
+    background: linear-gradient(to top, #f5e6d3 0%, #e8dcc8 50%, #d4c9b8 100%);
+  }
+  
+  .mountain-silhouette {
+    position: absolute;   /* position mountains at bottom */
+    bottom: 0;
+    width: 100%;
+    height: 45vh;         /* mountains occupy bottom 45% */
+  }
+  
+  .mist {
+    position: absolute;   /* position mist at bottom */
+    bottom: 0;
+    width: 100%;
+    height: 20vh;         /* mist covers front of mountains */
+    background: linear-gradient(
+      to top,
+      rgba(244, 244, 244, 0.6),
+      rgba(244, 244, 244, 0)
+    );
+    z-index: -5;
+    pointer-events: none;
+  }
+  
