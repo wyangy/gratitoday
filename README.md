@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Gratitoday – AI-Assisted Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Gratitoday** is a simple web app for logging daily gratitude entries. It was my first AI-assisted web app and demonstrates my skills in **React development, CRUD functionality, responsive design, localStorage persistence, and automated testing**.
 
-## Available Scripts
+**Live demo:** [https://gratitoday-two.vercel.app](https://gratitoday-two.vercel.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Add, edit, and delete gratitude entries (CRUD)
+- Persistent data with **localStorage**
+- Fully responsive design for desktop and mobile
+- Custom CSS mountain background created with AI (ChatGPT)
+- Comprehensive test coverage for core features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## AI Workflow & Learning
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Used **Claude** for coding, testing, and maintaining context in long sessions
+- Used **ChatGPT** for visual design, generating mockups, and converting them to CSS
+- Learned to leverage AI efficiently while applying human judgment for:
+  - Refactoring hard-to-read code
+  - Manual responsive checks across devices
+  - Adjusting UI details: colors, button sizes, and font weights
+- Gained insight into AI’s strengths and limitations: AI is fast at generating code, but I proofread, refined, and ensured logical structure and usability
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development Workflow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Features implemented in **frequent, focused commits**
+- Structured development: planning → core features → UI → testing → refinements
+- Demonstrates an **efficient AI-assisted workflow** with human oversight
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Technical Skills Demonstrated
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React & JavaScript (ES6+)
+- CSS / CSS modules
+- localStorage persistence
+- CRUD implementation
+- Responsive web design
+- Automated testing with Jest
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/wyangy/gratitoday.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run locally:
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Run tests:
+   ```bash
+   npm test
+   ```
+5. Build for production:
+   ```bash
+   npm run build
+   ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Outcome
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project shows that I can **work efficiently with AI**: I use AI as a tool while making all critical decisions myself. It demonstrates my ability to **plan, code, test, and refine a web app**, while understanding how to integrate AI-generated suggestions safely and effectively.
